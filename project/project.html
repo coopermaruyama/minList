@@ -1,14 +1,13 @@
-<head>
-	<title>Project</title>
-</head>
-<body>
-	{{renderPage}}
-</body>
-
 <template name="project">
 	<h1>{{projectName}}</h1>
-	{{> addTasks}}
-	{{> listTasks}}
+	<div class="left">
+		{{> addTasks}}
+		{{> listTasks}}
+	</div>
+	<div class="right">
+		{{> messages}}
+		{{> entry}}
+	</div>
 </template>
 
 <template name="addTasks">
@@ -19,7 +18,7 @@
 <template name="listTasks">
 	<ul>
 		{{#each tasks}}
-			<li>{{task}}</li>
+		<li><input class="task-checkbox" type="checkbox" {{#if checked "complete"}}checked{{/if}}>{{task}}</li>
 		{{/each}}
 	</ul>
 </template>
