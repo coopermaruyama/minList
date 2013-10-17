@@ -1,7 +1,7 @@
 {
-  "name": "sharedspace",
+  "name": "municate",
   "version": "0.0.1",
   "dependencies": {
-    "node-fibers" "1.0.1"
+    "fibers": "1.0.1"
   }
 }
