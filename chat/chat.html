@@ -1,0 +1,18 @@
+
+<template name="entry">
+  <p>
+    <input type="text" id="messageBox" placeholder="What do you want to say?">
+  </p>
+</template>
+
+<template name="messages">
+  <div id="chat">
+    {{#each messages}}
+      {{> message}}
+    {{/each}}
+  </div>
+</template>
+
+<template name="message">
+  <p>{{name}}: {{message}}</p>
+</template>
