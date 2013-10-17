@@ -1,0 +1,25 @@
+<head>
+	<title>Project</title>
+</head>
+<body>
+	{{renderPage}}
+</body>
+
+<template name="project">
+	<h1>{{projectName}}</h1>
+	{{> addTasks}}
+	{{> listTasks}}
+</template>
+
+<template name="addTasks">
+	<input type="text" id="input-task">
+	<button id="submit-task">Add</button>
+</template>
+
+<template name="listTasks">
+	<ul>
+		{{#each tasks}}
+			<li>{{task}}</li>
+		{{/each}}
+	</ul>
+</template>
