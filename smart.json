@@ -1,5 +1,7 @@
 {
   "packages": {
-    "iron-router": {}
+    "iron-router": {},
+    "HTML5-History-API": {},
+    "page-js-ie-support": {}
   }
 }
