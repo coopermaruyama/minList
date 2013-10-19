@@ -1,7 +1,28 @@
-<head>
+<!-- <head>
 	<title>Project</title>
 </head>
 <body>
-{{loginButtons align="right"}}
-	{{renderPage}}
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		{{loginButtons align="right"}}
+	</div>
+	<div class="row">
+		{{renderPage}}
+	</div>
 </body>
+-->
+<template name="layout">
+	<head>
+		<title>Project</title>
+	</head>
+	<body>
+		<div class="navbar navbar-inverse navbar-fixed-top">
+			<div class="container-full">
+				{{loginButtons align="right"}}
+			</div>
+		</div>
+		<div class="container-full">
+			{{yield}}
+		</div>
+	</body>
+
+</template>

@@ -1,18 +1,18 @@
 <template name="project">
 	{{#if exists}}
-		{{> showProject}}
+	{{> showProject}}
 	{{else }}
-		{{> newProject}}
+	{{> newProject}}
 	{{/if }}
 </template>
 
 <template name="showProject">
-	<h1>{{projectName}}</h1>
-	<div class="left">
+	<div class="col-md-8">
+		<h1 class="project-title">Project: {{projectName}}</h1>
 		{{> addTasks}}
 		{{> listTasks}}
 	</div>
-	<div class="right">
+	<div class="col-md-4">
 		{{> messages}}
 		{{> entry}}
 	</div>
@@ -24,15 +24,3 @@
 	<button>Create</button>
 </template>
 
-<template name="addTasks">
-	<input type="text" id="input-task">
-	<button id="submit-task">Add</button>
-</template>
-
-<template name="listTasks">
-	<ul>
-		{{#each tasks}}
-		<li><input class="task-checkbox" type="checkbox" {{#if checked "complete"}}checked{{/if}}>{{task}}</li>
-		{{/each}}
-	</ul>
-</template>

@@ -12,6 +12,7 @@ if Meteor.isClient
   Template.entry.events
     # All keyup events from the #messageBox element
     'keyup #messageBox': (event) ->
+      event.preventDefault()
       if event.type == "keyup" && event.which == 13 # [ENTER]
         new_message = $("#messageBox")
         name = "User"

@@ -1,18 +1,20 @@
-
-<template name="entry">
-  <p>
-    <input type="text" id="messageBox" placeholder="What do you want to say?">
-  </p>
-</template>
-
 <template name="messages">
-  <div id="chat">
-    {{#each messages}}
-      {{> message}}
-    {{/each}}
-  </div>
+  <div class="page-header">
+   <h2>Live Chat</h2>
+ </div>
+ <div id="chat" class="well">
+  {{#each messages}}
+  {{> message}}
+  {{/each}}
+</div>
 </template>
 
 <template name="message">
-  <p>{{name}}: {{message}}</p>
+  <p><strong>{{name}}:</strong> {{message}}</p>
+</template>
+
+
+<template name="entry">
+
+  <input type="text" id="messageBox" placeholder="Send a message..." class="form-control input-sm">
 </template>

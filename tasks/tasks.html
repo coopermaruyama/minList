@@ -1,0 +1,49 @@
+<template name="addTasks">
+	<div class="row">
+		<div class="col-md-12">
+				<div class="form-group">
+					<label>Create a New Task</label>
+					<input type="text" id="input-task" class="form-control" placeholder="Create a New Task.." autocomplete="off">
+				</div>
+				<!-- <button id="submit-task" class="btn btn-primary">Add</button> -->
+		</div>
+	</div>
+</template>
+
+<template name="listTasks">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="page-header">
+				<h2>Tasks</h2>
+			</div>
+			<div class="row">
+				<div class="col-md-4">
+					<ul class="nav nav-pills nav-stacked">
+						<li class="active" id="toggle-to-do"><a href="#">To-Do</a></li>
+						<li id="toggle-completed"><a href="#">Completed</a></li>
+					</ul>
+				</div>
+				<div class="col-md-8">
+					<ul class="list-group" id="tasks-incomplete">
+						{{#each todos}}
+						{{>todo}}
+						{{/each}}
+					</ul>
+					<ul class="list-group" id="tasks-complete">
+						{{#each completedTasks}}
+						{{> completedTask}}
+						{{/each}}
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>
+
+<template name="todo">
+	<li class="list-group-item"><input class="task-checkbox" type="checkbox" {{#if checked "complete"}}checked{{/if}}>{{task}}</li>
+</template>
+
+<template name="completedTask">
+	<li class="list-group-item"><input class="task-checkbox" type="checkbox" {{#if checked "complete"}}checked{{/if}}>{{task}}</li>
+</template>

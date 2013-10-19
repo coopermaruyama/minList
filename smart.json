@@ -2,6 +2,7 @@
   "packages": {
     "iron-router": {},
     "HTML5-History-API": {},
-    "page-js-ie-support": {}
+    "page-js-ie-support": {},
+    "bootstrap-3": {}
   }
 }
