@@ -3,6 +3,7 @@
     "iron-router": {},
     "HTML5-History-API": {},
     "page-js-ie-support": {},
-    "bootstrap-3": {}
+    "bootstrap-3": {},
+    "npm": {}
   }
 }

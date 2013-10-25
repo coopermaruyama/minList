@@ -2,6 +2,7 @@
   "name": "municate",
   "version": "0.0.1",
   "dependencies": {
-    "fibers": "1.0.1"
+    "fibers": "1.0.1",
+    "dropbox": "0.10.1"
   }
 }
