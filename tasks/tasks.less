@@ -1,3 +1,28 @@
 #tasks-complete {
 	display: none;
 }
+#tasks-complete, #tasks-incomplete {
+	.info {
+		color:#898989;
+		float:right;
+		font-size:12px;
+	}
+}
+#tasks-complete {
+	.info {
+		right: -219px;
+		position: absolute;
+		&>span {
+			display: inline;
+			&.glyphicon {
+				display: inline;
+				cursor: pointer;
+				opacity: .8;
+				padding-right: 14px;
+				&:hover {
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
