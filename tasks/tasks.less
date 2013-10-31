@@ -1,5 +1,10 @@
 #tasks-complete {
 	display: none;
+	.info {
+		span.completed {
+			color: #507C33;
+		}
+	}
 }
 #tasks-complete, #tasks-incomplete {
 	.info {
@@ -10,8 +15,7 @@
 }
 #tasks-complete {
 	.info {
-		right: -219px;
-		position: absolute;
+		float: right;
 		&>span {
 			display: inline;
 			&.glyphicon {
