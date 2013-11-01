@@ -1,32 +1,10 @@
-#tasks-complete {
-	display: none;
-	.info {
-		span.completed {
-			color: #507C33;
-		}
-	}
-}
-#tasks-complete, #tasks-incomplete {
+ul.list-tasks {
 	.info {
 		color:#898989;
 		float:right;
 		font-size:12px;
-	}
-}
-#tasks-complete {
-	.info {
-		float: right;
-		&>span {
-			display: inline;
-			&.glyphicon {
-				display: inline;
-				cursor: pointer;
-				opacity: .8;
-				padding-right: 14px;
-				&:hover {
-					opacity: 1;
-				}
-			}
+		span.completed {
+			color: #507C33;
 		}
 	}
 }

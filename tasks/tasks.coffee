@@ -2,24 +2,34 @@
 
 
 if Meteor.isClient
-	Template.listTasks.todos = ->
-		Tasks.find
-			project: Session.get("projectID")
-			status: "incomplete"
+	Session.set("listTasks.viewMode","incomplete") unless Session.get("listTasks.viewMode")?
+	Template.listTasks.tasks = ->
+		state = Session.get("listTasks.viewMode") ? "incomplete"
+		if state is "incomplete"
+			tasks = Tasks.find
+				project: Session.get("projectID")
+				status: "incomplete"
+		if state is "complete"
+			tasks = Tasks.find
+				project: Session.get("projectID")
+				status: "complete"
+		return tasks
 
-	Template.listTasks.completedTasks = ->
-		Tasks.find
-			project: Session.get("projectID")
-			status: "complete"
+	Template.listTasks.isViewMode = (viewMode) ->
+		Session.get("listTasks.viewMode") is viewMode
 
-	Template.listTasks.checked = (complete) ->
-		@status is complete
 
 	Template.listTasks.created = ->
 		@created
 
 	Template.listTasks.completed = ->
 		@completed
+
+	Template.task.isComplete = ->
+		@status is "complete"
+
+	Template.task.viewMode = (viewMode) ->
+		Session.get("listTasks.viewMode") is viewMode
 
 	Template.listTasks.events
 		'click .task-checkbox': (e) ->
@@ -32,22 +42,14 @@ if Meteor.isClient
 			else 
 				Tasks.update(@_id,{$set: {status: "incomplete"}})
 
-		'click #toggle-completed': (e) ->
-			$("#tasks-incomplete").slideUp()
-			$("#tasks-complete").slideDown();
+		'click .toggle-view-mode': (e) ->
+			$("ul.list-tasks").fadeOut 250, ->
+				Session.set "listTasks.viewMode", if Session.equals("listTasks.viewMode", "incomplete") then "complete" else "incomplete"
+				$(this).fadeIn()
+			$(".toggle-view-mode").removeClass("active")
 			$(e.currentTarget).addClass("active")
-			$("#toggle-to-do").removeClass("active")
-		'click #toggle-to-do': (e) ->
-			$("#tasks-complete").slideUp()
-			$("#tasks-incomplete").slideDown();
-			$(e.currentTarget).addClass("active")
-			$("#toggle-completed").removeClass("active")
-		'click #task-info .glyphicon.closed': (e) ->
-			$(e.currentTarget).hide()
-			$("#task-info").animate({right:10})
-
-
-
+			
+			
 	Template.addTasks.events
 		'keyup input': (e) ->
 			e.preventDefault()
@@ -58,5 +60,6 @@ if Meteor.isClient
 					status: "incomplete"
 					project: Session.get("projectID")
 					created: d.getMonth()+"/"+d.getDate()+"/"+d.getYear()
+					creator: Meteor.user()._id
 				$("#input-task").val("")
 			

@@ -19,19 +19,14 @@
 			<div class="row">
 				<div class="col-md-4">
 					<ul class="nav nav-pills nav-stacked">
-						<li class="active" id="toggle-to-do"><a href="#">To-Do</a></li>
-						<li id="toggle-completed"><a href="#">Completed</a></li>
+						<li class="toggle-view-mode {{#if isViewMode 'incomplete'}}active{{/if}}"><a href="#">To-Do</a></li>
+						<li class="toggle-view-mode {{#if isViewMode 'complete'}}active{{/if}}"><a href="#">Completed</a></li>
 					</ul>
 				</div>
 				<div class="col-md-8">
-					<ul class="list-group" id="tasks-incomplete">
-						{{#each todos}}
-						{{>todo}}
-						{{/each}}
-					</ul>
-					<ul class="list-group" id="tasks-complete">
-						{{#each completedTasks}}
-						{{> completedTask}}
+					<ul class="list-group list-tasks">
+						{{#each tasks}}
+						{{>task}}
 						{{/each}}
 					</ul>
 				</div>
@@ -40,26 +35,20 @@
 	</div>
 </template>
 
-<template name="todo">
+<template name="task">
 	<li class="list-group-item">
-		<input class="task-checkbox" type="checkbox" {{#if checked "complete"}}checked{{/if}}>
+		<input class="task-checkbox" type="checkbox" {{#if isComplete}}checked{{/if}}>
 		{{task}}
 		<span class="info text-right">
-			<span class="created">
-				{{created}}
-			</span>
-		</span>
-	</li>
-</template>
-
-<template name="completedTask">
-	<li class="list-group-item">
-		<input class="task-checkbox" type="checkbox" {{#if checked "complete"}}checked{{/if}}>
-		{{task}}
-		<span class="info text-right" id="task-info">
-			<span class="completed">
-				&#x2713; {{completed}}
-			</span>
+				{{#if viewMode "incomplete"}}
+					<span class="created">
+						{{created}}
+					</span>
+				{{else}}
+					<span class="completed">
+						&#x2713; {{completed}}
+					</span>
+				{{/if}}
 		</span>
 	</li>
 </template>
