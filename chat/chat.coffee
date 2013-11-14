@@ -15,8 +15,8 @@ if Meteor.isClient
       event.preventDefault()
       if event.type == "keyup" && event.which == 13 # [ENTER]
         new_message = $("#messageBox")
-        name = "User"
-
+        name = Meteor.user().profile.name
+        /\W/.test(name) && name = name.split(" ")[0] + " " + name.split(" ")[1].slice(0,1)
         # Save values into Mongo
         Messages.insert
           project_id: Session.get("projectID")
