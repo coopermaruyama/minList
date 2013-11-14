@@ -59,7 +59,7 @@ if Meteor.isClient
 					task: $("#input-task").val()
 					status: "incomplete"
 					project: Session.get("projectID")
-					created: d.getMonth()+"/"+d.getDate()+"/"+d.getYear()
+					created: d.toLocaleDateString()
 					creator: Meteor.user()._id
 				$("#input-task").val("")
 			
