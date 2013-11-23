@@ -5,6 +5,6 @@ if Meteor.isClient
 			data: -> 
 				Session.set("projectID",@params._id)
 			"project"
-		@route "municate", path: "/"
+		@route "home", path: "/"
 	Router.configure
 		layout: "layout"
