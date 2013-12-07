@@ -3,7 +3,7 @@
 		<div class="col-md-12">
 				<div class="form-group">
 					<label>Create a New Task</label>
-					<input type="text" id="input-task" class="form-control" placeholder="Create a New Task.." autocomplete="off">
+					<input type="text" id="input-task" class="form-control" placeholder="{{#if currentUser}}Create a New Task..{{else}}You must be logged in to add tasks{{/if}}" autocomplete="off" {{#unless currentUser}}disabled{{/unless}}>
 				</div>
 				<!-- <button id="submit-task" class="btn btn-primary">Add</button> -->
 		</div>

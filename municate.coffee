@@ -1,5 +1,5 @@
 if Meteor.isClient
-  console.log "is client"
+	console.log "app started as client"
   # Dropbox = require "dropbox"
 if Meteor.isServer
   Meteor.startup ->

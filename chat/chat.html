@@ -16,5 +16,5 @@
 
 <template name="entry">
 
-  <input type="text" id="messageBox" placeholder="Add a note.." class="form-control input-sm">
+  <input type="text" id="messageBox" placeholder="{{#if currentUser}}Add a note..{{else}}You must be logged in to add notes{{/if}}" class="form-control input-sm" {{#unless currentUser}}disabled{{/unless}}>
 </template>
