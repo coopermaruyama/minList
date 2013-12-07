@@ -1,4 +1,148 @@
 <template name="home">
-	<h1>Welcome to minList</h1>
+	<div class="home">
+		<div class="translucent">
 
+
+
+			<div id="create-overlay">
+				<div class="create-container col-md-6 col-md-offset-3 well">
+					<h1>MinList</h1>
+					<h2>Minimal Task Management</h2>
+					<form action="#" class="form-inline create-project">
+						<div class="form-group">
+							<label class="control-label" for="">http://minlist.io/</label>
+						</div>
+						<div class="form-group">
+							<input type="text" class="form-control" id="new-project-name">
+							<p class="help-block" id="new-project-help-block"></p>
+						</div>
+						<div class="form-group">
+							<button class="btn btn-success create-project" type="button">Create</button>
+						</div>
+					</form>
+				</div>
+			</div>
+
+
+			<div class="col-md-8">
+				<h1 class="project-title">Project: Cool Project</h1>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="form-group">
+							<label>Create a New Task</label>
+							<input type="text" id="input-task" class="form-control" placeholder="Create a New Task.." autocomplete="off">
+						</div>
+						<!-- <button id="submit-task" class="btn btn-primary">Add</button> -->
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-12">
+						<div class="page-header">
+							<h2>Tasks</h2>
+						</div>
+						<div class="row">
+							<div class="col-md-4">
+								<ul class="nav nav-pills nav-stacked">
+									<li class="toggle-view-mode "><a href="#">To-Do</a></li>
+									<li class="toggle-view-mode active"><a href="#">Completed</a></li>
+								</ul>
+							</div>
+							<div class="col-md-8">
+								<ul class="list-group list-tasks">
+
+									<li class="list-group-item">
+										<input class="task-checkbox" type="checkbox" checked="">
+										add $titles
+										<span class="info text-right">
+
+											<span class="completed">
+												✓ 11/6/113
+											</span>
+
+										</span>
+									</li>
+
+									<li class="list-group-item">
+										<input class="task-checkbox" type="checkbox" checked="">
+										remove &lt;meta&gt;
+										<span class="info text-right">
+
+											<span class="completed">
+												✓ 11/6/113
+											</span>
+
+										</span>
+									</li>
+
+									<li class="list-group-item">
+										<input class="task-checkbox" type="checkbox" checked="">
+										check for migrate
+										<span class="info text-right">
+
+											<span class="completed">
+												✓ 11/6/113
+											</span>
+
+										</span>
+									</li>
+
+									<li class="list-group-item">
+										<input class="task-checkbox" type="checkbox" checked="">
+										remove main js file
+										<span class="info text-right">
+
+											<span class="completed">
+												✓ 11/6/113
+											</span>
+
+										</span>
+									</li>
+
+									<li class="list-group-item">
+										<input class="task-checkbox" type="checkbox" checked="">
+										zendesk
+										<span class="info text-right">
+
+											<span class="completed">
+												✓ 11/6/113
+											</span>
+
+										</span>
+									</li>
+
+									<li class="list-group-item">
+										<input class="task-checkbox" type="checkbox" checked="">
+										keep meta desc
+										<span class="info text-right">
+
+											<span class="completed">
+												✓ 11/6/113
+											</span>
+
+										</span>
+									</li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<div class="page-header">
+					<h2>Notes</h2>
+				</div>
+				<div id="chat" class="well">
+
+					<p><strong>Cooper M:</strong> username for wordpress: admin</p>
+
+					<p><strong>Cooper M:</strong> password for wordpress: admin</p>
+
+					<p><strong>Cooper M:</strong> remember to email evan</p>
+
+				</div>
+				<input type="text" id="messageBox" placeholder="Send a message..." class="form-control input-sm">
+			</div>
+		</div>
+	</div>
 </template>

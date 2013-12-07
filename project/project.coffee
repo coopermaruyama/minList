@@ -1,8 +1,6 @@
 @Projects = new Meteor.Collection("projects")
 
-
 if Meteor.isClient
-
 	Template.project.exists = ->
 		Projects.findOne({id: Session.get("projectID")})?
 

@@ -1,10 +1,11 @@
 if Meteor.isClient
 	Router.map ->
 		@route "project", 
-			path: "/p/:_id"
+			path: "/:_id"
 			data: -> 
 				Session.set("projectID",@params._id)
 			"project"
-		@route "home", path: "/"
+		@route "home",
+			path: "/"
 	Router.configure
 		layout: "layout"
