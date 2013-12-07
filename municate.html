@@ -15,17 +15,34 @@
 		<title>Project</title>
 	</head>
 	<body>
-		<div class="navbar navbar-inverse navbar-fixed-top">
+		<header class="navbar navbar-inverse navbar-fixed-top">
 			<div class="container-full">
 				<div class="navbar-header">
-					<a href="/" class="navbar-brand"><img src="/images/logo.png" alt="" id="nav-logo"></a>
+					<button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="/" class="navbar-brand">
+						<img src="/images/logo.png" alt="" id="nav-logo">
+					</a>
 				</div>
-				{{loginButtons align="right"}}
+				<nav class="collapse navbar-collapse bs-navbar-collapse" role="navigation">
+					<ul class="nav navbar-nav">
+						<!-- Ucomment below to add more menu items to left of nav -->
+						<!-- <li>Menuitem</li> -->
+					</ul>
+					<ul class="nav navbar-nav navbar-right">
+						<li>
+							{{loginButtons align="right"}}	
+						</li>
+					</ul>
+				</nav>
 			</div>
-		</div>
+		</header>
 		<div class="container-full">
 			{{yield}}
 		</div>
 	</body>
-
 </template>
