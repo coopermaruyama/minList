@@ -14,14 +14,11 @@ if Meteor.isClient
 		return Session.get("projectID")
 
 
-
-
 # Home
 
 if Meteor.isClient
 	Template.home.events
 		"click button.create-project": (event) ->
-			console.log "clicked"
 			event.preventDefault()
 			createdProjectId = $("#new-project-name").val()
 			if Projects.findOne({id: createdProjectId}) is undefined
