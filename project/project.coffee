@@ -9,6 +9,11 @@ if Meteor.isClient
 			Projects.insert
 				id: Session.get("projectID")
 				admin: Meteor.user()._id
+		"submit form.create-project": (event) ->
+			event.preventDefault()
+			Projects.insert
+				id: Session.get("projectID")
+					admin: Meteor.user()._id
 
 	Template.showProject.projectName = ->
 		return Session.get("projectID")
