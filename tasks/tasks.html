@@ -37,7 +37,7 @@
 
 <template name="task">
 	<li class="list-group-item">
-		<input class="task-checkbox" type="checkbox" {{#if isComplete}}checked{{/if}}>
+		<input class="task-checkbox" type="checkbox" {{#if isComplete}}checked{{/if}} {{#unless currentUser}}disabled="disabled" title=" &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;You must be logged in to use tasks"{{/unless}}>
 		{{task}}
 		<span class="info text-right">
 				{{#if viewMode "incomplete"}}

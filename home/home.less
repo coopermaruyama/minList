@@ -54,6 +54,7 @@
 				}
 				#new-project-help-block {
 					position: absolute;
+					left:150px;
 					&.error {
 						color: red;
 					}
@@ -62,9 +63,16 @@
 					}
 				}
 			}
-			#cta {
-
-			}
 		}
+	}
+	#create-overlay > .create-container {
+		width: 80%;
+		margin: 0 auto;
+	}
+}
+@media (min-width: 992px) { 
+	#create-overlay > .create-container {
+		width: 50% !important; 
+		margin-left: 25% !important;
 	}
 }
